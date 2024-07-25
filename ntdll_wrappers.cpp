@@ -17,7 +17,7 @@ HRESULT mySetThreadDescription(HANDLE hThread, const BYTE* buf, size_t buf_size)
 	::memcpy(DestinationString.Buffer, buf, buf_size);
 
 	auto pNtSetInformationThread = reinterpret_cast<decltype(&NtSetInformationThread)>(GetProcAddress(GetModuleHandle("ntdll.dll"), "NtSetInformationThread"));
-	NTSTATUS status = pNtSetInformationThread(hThread, (THREADINFOCLASS)(ThreadNameInformation | 0x20), &DestinationString, 0x10u);
+	NTSTATUS status = pNtSetInformationThread(hThread, (THREADINFOCLASS)ThreadNameInformation, &DestinationString, sizeof(UNICODE_STRING));
 	::free(padding);
 	return HRESULT_FROM_NT(status);
 }
