@@ -4,6 +4,8 @@ Remote shellcode injection technique, using Thread Name (a.k.a. Thread Descripti
 
 The code to be injected is passed as a thread description to the target (with `SetThreadDescription`). Then, a function `GetThreadDescription` is called remotely on the target, via APC, causing the description buffer to be copied into the target’s working set. After making the buffer executable, it is run using another APC call.
 
+**Details: https://research.checkpoint.com/2024/thread-name-calling-using-thread-name-for-offense/**
+
 ## Remote write via Thread Name
 
 The buffer is injected into the remote process without the need of having the write privilege (`PROCESS_VM_WRITE`).
