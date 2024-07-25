@@ -16,10 +16,7 @@ build:
   
 configuration:
   - Release
-  
-environment:
-  artifactName: $(APPVEYOR_PROJECT_NAME)-$(APPVEYOR_REPO_COMMIT)-$(CONFIGURATION)
-    
+   
 before_build:
   - mkdir build
   - cd build
@@ -28,11 +25,3 @@ before_build:
   
 build_script:
   - cmake --build . --config %CONFIGURATION% --target install 
-
-after_build:
-  - mkdir %artifactName%
-  - cp %APPVEYOR_BUILD_FOLDER%/%APPVEYOR_REPO_COMMIT%/* %artifactName%
-
-artifacts:
-  - path: build\%artifactName%
-  
