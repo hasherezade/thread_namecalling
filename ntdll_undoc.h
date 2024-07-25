@@ -4,7 +4,7 @@
 #define NT_SUCCESS 0
 #define NT_CREATE_THREAD_EX_SUSPENDED 1
 #define NT_CREATE_THREAD_EX_ALL_ACCESS 0x001FFFFF
-#define ThreadDescriptorTableEntry 0x26
+#define ThreadNameInformation 0x26
 
 NTSTATUS
 NTAPI
