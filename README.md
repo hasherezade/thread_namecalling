@@ -1,5 +1,7 @@
 # Thread Name-Calling Injection
 
+[![Build status](https://ci.appveyor.com/api/projects/status/k4ff2bndq4juwnpc?svg=true)](https://ci.appveyor.com/project/hasherezade/thread-namecalling)
+
 Remote shellcode injection technique, using Thread Name (a.k.a. Thread Description)
 
 The code to be injected is passed as a thread description to the target (with `SetThreadDescription`). Then, a function `GetThreadDescription` is called remotely on the target, via APC, causing the description buffer to be copied into the target’s working set. After making the buffer executable, it is run using another APC call.
