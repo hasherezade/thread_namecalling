@@ -33,7 +33,7 @@ bool read_remote(HANDLE hProcess, IN const void* remote_addr, OUT void* buffer, 
 	{
 		return false;
 	}
-	ULONG read_size = 0;
+	SIZE_T read_size = 0;
 	NTSTATUS status = pNtReadVirtualMemory(hProcess, (PVOID)remote_addr, buffer, buffer_size, &read_size);
 	if (status != STATUS_SUCCESS || read_size != buffer_size)
 	{

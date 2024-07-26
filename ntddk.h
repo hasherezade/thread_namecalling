@@ -3500,8 +3500,8 @@ NtReadVirtualMemory(
     IN HANDLE ProcessHandle,
     IN PVOID BaseAddress,
     OUT PVOID Buffer,
-    IN ULONG NumberOfBytesToRead,
-    OUT PULONG NumberOfBytesRead OPTIONAL
+    IN SIZE_T NumberOfBytesToRead,
+    OUT PSIZE_T NumberOfBytesRead OPTIONAL
     );
 
 
@@ -3512,8 +3512,8 @@ NtWriteVirtualMemory(
     IN HANDLE ProcessHandle,
     IN PVOID BaseAddress,
     IN PVOID Buffer,
-    IN ULONG NumberOfBytesToWrite,
-    OUT PULONG NumberOfBytesWritten OPTIONAL
+    IN SIZE_T NumberOfBytesToWrite,
+    OUT PSIZE_T NumberOfBytesWritten OPTIONAL
     );
 
 
