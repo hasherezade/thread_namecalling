@@ -10,7 +10,7 @@ The code to be injected is passed as a thread description to the target (with `S
 
 ## Remote write via Thread Name
 
-The buffer is injected into the remote process without the need of having the write privilege (`PROCESS_VM_WRITE`).
+The buffer is injected into the remote process without the need of having the [write access right (`PROCESS_VM_WRITE`)](https://learn.microsoft.com/en-us/windows/win32/procthread/process-security-and-access-rights).
 
 ![](img/animation.gif)
 
