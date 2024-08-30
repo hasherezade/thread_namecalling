@@ -46,7 +46,7 @@ HANDLE find_alertable_by_event(HANDLE hProcess, std::vector<DWORD>& threads)
         signaledThread = threadHandles[i];
     }
 
-    // 6. Close source + target handles
+    // 6. Close handles
     for (i = 0; i < cnt; i++) {
         CloseHandle(eventHandlesL[i]);
         if (threadHandles[i] != signaledThread) {
